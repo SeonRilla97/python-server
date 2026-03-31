@@ -19,7 +19,6 @@ while True:
         # 그 외 모든 오류
         print(e)
 
-
     finally:
         # 항상 실행
         print("계산 시도 완료")
