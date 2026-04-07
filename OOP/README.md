@@ -55,3 +55,111 @@ Aggregation : 부품과 전체의 생명주기가 독립적 (학교&학생)
 정사각형&정사각형 : 관계없음 - 둘 다 도형의 일종
 
 ===
+
+추상화 : 프로그램에 필요한 핵심 역할과 책임만 뽑는다
+캡슐화 : 데이터와 기능을 하나의 캡슐로 묶는다 (정보은닉 & 접근 제어)
+상속 : 종류와 분류를 표현하기 위한 설계 방법으로 부모의 기능을 물려받아 재사용한다. (무분별한 상속을 하지 말것)
+다형성 : 같은 이름의 메서드가 객체마다 다르게 동작하는 것 (오버라이딩, 오버로딩)
+
+OCP : 개방-폐쇄 원칙
+
+기능 추가 시 메인 로직은 수정 X -> 하위 코드만 수정
+
+- 파이썬은 duck Typing을 지원한다 (Go의 문법과 비슷)
+
+```python
+# 기존 코드
+character.attack()
+
+# 기능 추가
+class character:
+    def __init__(self, attack_strategy):
+        self.attack_strategy = attack_strategy
+
+    def attack(self):
+        self.attack_strategy.attack()
+
+class magic_attack:
+    def attack(self):
+        print("마법 공격")
+
+class sword_attack:
+    def attack(self):
+        print("검 공격")
+```
+
+===============
+
+# SOLID
+
+SRP : 단일 책임 원칙
+
+- 하나의 클래스는 하나의 책임만 가진다.
+
+```
+class User:
+- 로그인 / 이메일 보내기 / DB 저장 / 로그 남기기
+
+-----------------------------
+class User (데이터만)
+class EmailSender (전송만)
+class UserRepository (DB만)
+
+
+```
+
+OCP : 개방-폐쇄 원칙
+
+- 확장은 열려있고 변경은 닫힌다. (멀티탭에 플러그만 꼽으면 동작한다)
+
+```
+if type == "Dog": bark()
+elif type == "Cat": meow()
+
+--------------------------
+
+animal.bark()
+```
+
+LSP : 리스코프 치환 원칙
+
+- 자식은 부모를 대체할 수 있어야 한다.
+
+= 부모가 하는일은 자식도 한다.
+
+```
+위반 사례
+Class Bird (메서드 fly)
+Class Penguin (메서드 fly - 펭귄은 날 수 없음)
+
+--> 상속은 행동과 규약을 모두 지킬 수 있을 때 써라
+```
+
+ISP : 인터페이스 분리 원칙
+
+내가 사용하지 않는 기능에 의존하게 만들지 마라
+
+```
+복합기 <- 인쇄만 필요한데 팩스기능까지 구현?
+- print() , fax() , scan()
+
+필요 기능만 구현 할 수 있게 수정
+iPrinter / iScanner / iFax
+
+
+```
+
+DIP : 의존성 역전 원칙
+
+구체적인것이 아닌 추상적인 것에 의존해라
+
+```
+장난감 로봇의 건전지 [건전지를 사용한다]
+
+규격에 맞춘다 (AA 베터리 타입)
+
+베터리 제조사에 맞는게 아니라 (베터리 제조사가 규격에 맞게 설계해야함 [규격에 의존])
+  - 에너자이저
+  - 듀라셀
+  - 벡셀
+```
