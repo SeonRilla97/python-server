@@ -1,4 +1,5 @@
 import time
+import random
 # 1. 상속
 class Character:
     def __init__(self, name, hp, power):
@@ -51,12 +52,14 @@ class Hero(Character):
                 break
 
         if found_potion:
+            self.inventory.remove(found_potion)
+            print(f'{found_potion.name}을(를) 사용했습니다.')
             heal_amount = found_potion.recovery_amount
             self.hp += heal_amount
             if self.hp > self.max_hp:
                 self.hp = self.max_hp
-            print(f'{self.name}은 {heal_amount}의 체력을 회복했습니다. : {self.hp} / {self.max_hp}')
-            self.inventory.remove(found_potion)
+            print(f'체력을 회복했습니다. : {self.hp} / {self.max_hp}')
+
 
             return True
         else:
@@ -86,72 +89,108 @@ class Item:
     def __init__(self, name, recovery_amount):
         self.name = name
         self.recovery_amount = recovery_amount
-# 전투 시스템
-def battle(hero, monster):
-    print(f"{monster.name}이 나타났다!")
-    print(f"(HP: {monster.hp}, 공격력: {monster.power})")
-    while hero.is_alive() and monster.is_alive():
-        print("-" * 30 )
 
-        print("선택!")
-        print("1. 공격")
-        print("2. 도망")
-        print("3. 포션 사용")
-        choice = input("행동을 선택하세요: ")
+class GameManager:
+    def __init__(self):
+        self.hero = None
+    
 
-        turn_ended = False
+    def start_game(self):
+        print("\n 텍스트 RPG : 전설의 시작")
+        name = input("영웅의 이름을 입력하세요 : ")
+        self.hero = Hero(name, 100, 30)
 
-        if choice == "1":
-            hero.attack(monster)
-            turn_ended = True
+        while True:
+            print ("\n" + "=" * 30)
+            print(" [ 메 인 메 뉴 ] ")
+            print ("1. 모험을 떠난다 (랜덤 이벤트)")
+            print ("2. 상태 보기")
+            print ("3. 종료")   
+            print ("=" * 30)
+            choice = input(">>> ")
 
-        elif choice == "2":
-            if hero.use_potion():
-                turn_ended = True
-            else:
-                turn_ended = False
-                print("도망칠 수 없습니다!")
-        elif choice == "3":
-            if hero.use_potion():
-                turn_ended = True
-            else:
-                turn_ended = False
-                print("포션이 없습니다.")
-        else:
-            print("잘못된 선택입니다.")
-            continue
-
-        if not monster.is_alive():
-            print(f"{monster.name}을(를) 물리쳤습니다!")
-            if monster.drop_item:
-                hero.get_item(monster.drop_item)
-            break
-
-        if turn_ended and monster.is_alive():
-            time.sleep(1)
-            print( "몬스터의 반격!")
-            monster.attack(hero)
-
-            if not hero.is_alive():
-                print(f"{hero.name}이(가) 쓰러졌습니다.")
+            if choice == "1":
+                self.explore()
+            elif choice == "2":
+                self.hero.show_status()
+            elif choice == "3":
+                print("게임을 종료합니다.")
                 break
+            else:
+                print("잘못된 입력입니다.")
+
+            if not self.hero.is_alive():
+                print("게임 오버")
+                break
+    def explore(self):
+        print("숲속을 탐험하는중....")
+        time.sleep(1)
+
+        dice = random.randint(1, 10)
+
+        if dice <= 3:
+            print ("아무 일도 일어나지 않았습니다.")
+        elif dice <= 8:
+            print ("덤불 속에서 무언가 튀어나왔습니다.")
+
+            if random.random() < 0.8:
+                monster = Slime("슬라임", 30, 10)
+                monster.drop_item=Item ("빨간포션", 30)
+            else:
+                monster = Dragon("드래곤", 100, 30)
+            self.battle(monster)
+        else:
+            print("길가에서 반짝이는 것을 발견했습니다.")
+            potion = Item("빨간포션", 30)
+            self.hero.get_item(potion)
+
+    def battle(self, monster):
+        print(f"{monster.name}이 나타났다!")
+        print(f"[VS {monster.name} (HP: {monster.hp})]")
+        while self.hero.is_alive() and monster.is_alive():
+            print("-" * 30 )
+
+            print("선택! : 1. 공격, 2. 포션 사용, 3. 도망")
+            choice = input(">>> ")
+
+            turn_ended = False
+
+            if choice == "1":
+                self.hero.attack(monster)
+                turn_ended = True
+
+            elif choice == "2":
+                if self.hero.use_potion():
+                    turn_ended = True
+                else:
+                    turn_ended = False
+                    print("도망칠 수 없습니다!")
+            elif choice == "3":
+                if self.hero.use_potion():
+                    turn_ended = True
+                else:
+                    turn_ended = False
+                    print("포션이 없습니다.")
+            else:
+                print("잘못된 선택입니다.")
+                continue
+
+            if not monster.is_alive():
+                print(f"{monster.name}을(를) 물리쳤습니다!")
+                if monster.drop_item:
+                    self.hero.get_item(monster.drop_item)
+                break
+
+            if turn_ended and monster.is_alive():
+                time.sleep(0.3)
+                print( "몬스터의 반격!")
+                monster.attack(self.hero)
+
+                if not self.hero.is_alive():
+                    print(f"{self.hero.name}이(가) 쓰러졌습니다.")
+                    break
 
 # 게임 실행
 if __name__ == "__main__":
-    print("=== 게임 시작 ===")
-    hero = Hero("주인공", 100, 30)
-    slime = Slime("슬라임", 50, 5)
-    dragon = Dragon("드래곤", 200, 20)
-
-    slime.drop_item = Item("빨간포션", 30)
-
-
-    battle(hero, slime)
-    # battle(hero, dragon)
-
-    if hero.is_alive():
-        print("승리!")
-        print("드래곤 등장!!")
-        battle(hero, dragon)
-    else:
-        print("패배...")
+    game = GameManager()
+    game.start_game()
