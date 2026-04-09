@@ -2,14 +2,20 @@ from fastapi import FastAPI
 from swagger.swagger import router as swagger_router
 from request.router import router as request_router
 from response.router import router as response_router
+from template.jinja import router as template_router
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 # FastAPI Instance 생성
 app = FastAPI()
+
+templates = Jinja2Templates(directory="./static/templates")
 
 # 라우터 장착
 app.include_router(swagger_router)
 app.include_router(request_router)
 app.include_router(response_router)
+app.include_router(template_router)
 
 # 라우터
 '''
