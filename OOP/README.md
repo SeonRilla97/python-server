@@ -1,4 +1,4 @@
-OOP
+[2026년! 객체지향 제대로 배우기(with Python) - Inflearn](https://www.inflearn.com/course/2026%EB%85%84-%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EA%B8%B0wi/dashboard?cid=340165)
 
 1. 기계 중심 : 기계에 명령
 2. 절차 지향 : 명령어의 순차적 실행

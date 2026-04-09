@@ -1,0 +1,1 @@
+[2026년! 처음부터 제대로 배우는 파이썬 기초](https://www.inflearn.com/course/%EC%B2%98%EC%9D%8C%EB%B6%80%ED%84%B0-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EB%B0%B0%EC%9A%B0%EB%8A%94-%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B8%B0%EC%B4%88/dashboard?cid=339933)
