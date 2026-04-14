@@ -39,3 +39,46 @@ venv는 Git에 올라가지 않으니 이를 ./web 디렉토리에서 실행하�
 [참고 :: Lib 추가]
     pip freeze > requirements.txt
 ```
+
+61 space-5vknj1n Lauren Workspace DELETE_REQ
+103 space-rd0mwgc tets DELETE_REQ
+91 space-b0p756s TOBESOFT DELETE_REQ
+106 space-qbqn5it testspace DELETE_REQ
+120 space-4fjuytr test DELETE_REQ
+116 space-5ynogya WorkSpace260401 DELETE_REQ
+118 space-zetgehb lxx DELETE_REQ
+119 space-0fmwk96 lxx DELETE_REQ
+121 space-hw0wdkv weg DELETE_REQ
+122 space-mo15pb3 test DELETE_REQ
+129 space-ux6a189 Test Workspace DELETE_REQ
+107 space-75dx9ds Demo DELETE_REQ
+
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 61, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 103, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 91, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 106, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 120, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 116, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 118, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 119, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 121, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 122, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 129, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('TOBE', 1, 107, 'SPACE_ADMIN', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 1, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');
+INSERT INTO users_space_role(com_code, user_no, space_no, role_id, created_at, created_by, updated_at, updated_by)VALUES('', 0, 0, '', CURRENT_TIMESTAMP, '', CURRENT_TIMESTAMP, '');

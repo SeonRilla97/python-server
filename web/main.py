@@ -3,6 +3,7 @@ from swagger.swagger import router as swagger_router
 from request.router import router as request_router
 from response.router import router as response_router
 from template.router import router as template_router
+from pydantic.router import router as pydantic_router
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -16,6 +17,8 @@ app.include_router(swagger_router)
 app.include_router(request_router)
 app.include_router(response_router)
 app.include_router(template_router)
+app.include_router(pydantic_router)
+
 
 # 라우터
 '''
